@@ -1,0 +1,6 @@
+id_venda,data_venda,produto,categoria,valor,quantidade,regiao
+1,2024-01-05,Notebook,Eletrônicos,3500,1,Sudeste
+2,2024-01-10,Mouse,Periféricos,80,3,Sul
+3,2024-02-03,Monitor,Eletrônicos,1200,2,Norte
+4,2024-03-15,Teclado,Periféricos,150,2,Sudeste
+5,2024-04-02,Cadeira,Escritório,750,1,Centro-Oeste

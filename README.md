@@ -40,7 +40,7 @@ Exemplo de estrutura de banco de dados jurídico para insights em celeridade e g
 ## 📄 Currículo
 
 📥 Baixe meu currículo atualizado:  
-👉 [`CV_DouglasVinicius_AnalistaDados_Revisado.pdf`](CV/CV_DouglasVinicius_AnalistaDados_Revisado.pdf)
+👉 [`CV_DouglasVinicius_AnalistaDados_Revisado.pdf`](CV/CV_DouglasVinicius_AnalistaDados.pdf)
 
 ---
 

@@ -1,0 +1,43 @@
+
+-- 1. Processos Tratados Elaw
+Processos Tratados Elaw = 
+CALCULATE(
+    DISTINCTCOUNT('DadosCorelacionados'[PROCESSO]),
+    KEEPFILTERS(VALUES('Ocorrencias'[CADASTRADO POR]))
+)
+
+-- 2. Tempo Médio por Processo
+Tempo Médio por Processo = 
+DIVIDE(
+    SUM('Ocorrencias'[MinutosTrabalhados]),
+    DISTINCTCOUNT('DadosCorelacionados'[PROCESSO])
+)
+
+-- 3. Tempo Total Formatado (HH:MM)
+Tempo Total Formatado = 
+VAR TotalMinutos = SUM('Ocorrencias'[MinutosTrabalhados])
+VAR Horas = INT(TotalMinutos / 60)
+VAR Minutos = MOD(TotalMinutos, 60)
+RETURN
+FORMAT(Horas, "00") & ":" & FORMAT(Minutos, "00")
+
+-- 4. Retorno por Hora (R$/h)
+Retorno por Hora = 
+DIVIDE(
+    SUM('DadosCorelacionados'[Valor da Causa]),
+    SUM('Ocorrencias'[MinutosTrabalhados]) / 60
+)
+
+-- 5. % de Processos Ativos
+% Processos Ativos = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('DadosCorelacionados'),
+        'DadosCorelacionados'[Status do contrato] = "Ativo"
+    ),
+    COUNTROWS('DadosCorelacionados')
+)
+
+-- 6. Processos por Área do Direito
+Processos por Área = 
+COUNTROWS('DadosCorelacionados')
